@@ -79,7 +79,10 @@ WSGI_APPLICATION = 'mygallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'gallery',
+        'USER': 'edwike',
+    'PASSWORD':'1234',
+       
     }
 }
 
