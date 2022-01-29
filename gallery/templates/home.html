@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Perfect Pixels - {{title}}</title>
+  {% else %}
+    <title> Perfect Pixels </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %} 
+    <h1> It's amazing how photography can capture just a split second of something exquisite</h1>
+    <h3 class="text-align center">"Kiera Cass"</h3>
+     {%endblock%}
+</body>
+</html>
+
+
+
