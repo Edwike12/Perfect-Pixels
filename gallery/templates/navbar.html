@@ -9,6 +9,7 @@
   <title></title>
         {% block styles %}
           {% bootstrap_css %}
+  
         <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
         {% endblock %}
@@ -32,7 +33,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title about">Perfect-Pixels</h5> 
+                <h5 class="modal-title about"><img src="{% static 'images/logo.png' %}" class="" style="width:30px">Perfect-Pixels</h5> 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
