@@ -7,6 +7,10 @@
 
          
 {{block.super}}
+<br>
+<br>
+<br>
+<br>
     <div class=" container-fluid banner">
 
         <div class="cover">
@@ -40,10 +44,13 @@
                     <div class="modal-body">
                         <img src="{{items.image.url}}" alt="" class="responsive">
                         <p>{{items.description}}</p>
+                        <p>Category: {{items.category}}</p>
+                        <p>Location: {{items.location}}</p>
+                        <p>{{items.created_at|date}}</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                        <input class="form-control" type="text" value="{{items.image.url}}" id="{{items.id}}.url">
+                        <button class="btn-btn-success">Copy link</button>
                     </div>
                   </div>
                 </div>
