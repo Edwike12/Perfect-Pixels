@@ -1,6 +1,7 @@
 html, body{
     font-family: 'Raleway', sans-serif;
     font-size: 100%;
+    
 }
 
 div.container.navigation{
@@ -18,7 +19,7 @@ nav.navbar.navbar-expand-lg.navbar-light{
 
 }
 h1{
-    color: blue;
+    color: black;
 }
 
 .responsive{
