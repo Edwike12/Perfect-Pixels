@@ -20,3 +20,9 @@ nav.navbar.navbar-expand-lg.navbar-light{
 h1{
     color: blue;
 }
+
+.responsive{
+    max-width: 300px;
+    height: auto;
+}
+
