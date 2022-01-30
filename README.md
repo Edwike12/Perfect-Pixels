@@ -7,7 +7,7 @@ EDWIKE NYAUNCHO
 
 
 ## Project description
-This is a personal blogging website where you can create and share your opinions and other users can read and comment on them. Also has a feature that displays random quotes to inspire your users.
+Perfect-Pxels is a photo gallery web application to showcase beautiful pictures. Users get can view photos uploaded by admin. Users can see photos based on the location, by clicking on the listed locations in the menu. They can also copy the link to a photo to paste at their discretion. They can also search for photos based on the categories.
 
 
 ## USER STORY
@@ -25,11 +25,15 @@ This is a personal blogging website where you can create and share your opinions
 ## Setup Instructions and Installation
 For the application to run, you have to install:
 
--python3.8
--Django framework
--virtual environment
--Postgres
+- python3.8
 
+- Django framework
+
+- virtual environment
+
+- Postgres
+
+Setup and Installation
 - open terminal
 
 - git clone this repository https://github.com/Edwike12/Perfect-Pixels
@@ -37,36 +41,52 @@ For the application to run, you have to install:
 - use a code editor
 
 - Actvate the virtual env 
-        $ source venv/bin/activate
+
+        -$ source venv/bin/activate
 
 - Install dependancies 
-        $ pip install -r requirements.txt
+
+        -$ pip install -r requirements.txt
 
 - Create a database
-        psql
-        CREATE DATABASE gallery;
+
+        -psql
+
+        -CREATE DATABASE gallery;
 
 - .env file- create  .env file and hve the following filling where appropriate:
-            SECRET_KEY = '<Secret_key>'
-            DBNAME = 'gallery'
-            USER = '<Username>'
-            PASSWORD = '<password>'
-            DEBUG = True
+
+            -SECRET_KEY = '<Secret_key>'
+
+            -DBNAME = 'gallery'
+
+            -USER = '<Username>'
+
+            -PASSWORD = '<password>'
+
+            -DEBUG = True
 
 - Run initial migration
-        $ python3.8 manage.py makemigrations gallery
-        $ python3.8 manage.py migrate
+
+        -$ python3.8 manage.py makemigrations gallery
+
+        -$ python3.8 manage.py migrate
 
 - Run the app
-        $ python3.8 manage.py runserver
+
+        -$ python3.8 manage.py runserver
 
 
 ## Technologies used
--python3.8
--Django
--Html, Css and Bootstrap
--postgres sql
--Heroku
+- python3.8
+
+- Django
+
+- Html, Css and Bootstrap
+
+- postgres sql
+
+- Heroku
 
 
 ## Known Bugs
