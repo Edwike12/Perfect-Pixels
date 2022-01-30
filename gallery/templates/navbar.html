@@ -1,70 +1,50 @@
-{% load bootstrap4 %}
-{% load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: black; color: white;">
+    <a class="navbar-brand" href="/" style=" color: white;">Perfect-Pixels</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-        {% block styles %}
-          {% bootstrap_css %}
-  
-        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/home.css' %}">
-        {% endblock %}
-</head>
-<body>
-   <!-- Main navigation bar -->
-   <nav class="navbar navbar-expand-lg navbar-light" id="navMain">
-    <div class="container navigation header_right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-          <a class="navbar-brand" href="/"><img src="{% static 'images/logo.png' %}" class="" style="width:30px"> Perfect Pixels</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active"><a class="nav-link" href="/"> HOME <span class="sr-only">(current)</span></a></li>
-              <li class="nav-item"><a class="nav-link" href="/" data-toggle="modal" data-target="#about">ABOUT</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#category">CATEGORY</a></li>
-              <li class="nav-item"><a class="nav-link open-nav" style="cursor:pointer">LOCATION</a></li>
-            </ul>
-          </div>
-      </div>
-</nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/" style=" color: white;">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin" style=" color: white;">Admin</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style=" color: white;">
+                    Location
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for location in locations %}
+                    <a class="dropdown-item" href="/?location={{location.id}}">{{location.name}}</a>
 
-<!-- The about bar -->
-<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title about"><img src="{% static 'images/logo.png' %}" class="" style="width:30px">Perfect-Pixels</h5> 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container row">
-                    <p class="abt">
-                        Perfect Pixels is an application of beautiful images with a splash of color.
-                        <br>
-                    <p class="abt">
-                        Search for photoghraphs of interest based on various categories and view the pictures and their location.
-                    </p>
-                    </p>
-                    <div class="">
+                    {%endfor%}
 
-                        <img src="{% static 'images/about.png' %}" alt="" class = "splash"  style="width:450px*250">
-                    </div>
-                    <hr>
-                    <blockquote class="text-muted abt">
-                        ~A good snapshot keeps a moment thats gone from running away ~"Eudora Welty"
-                    </blockquote>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </li>
 
-</body>
-</html>
+        </ul>
+
+        <div class="col-sm-4 col-md-4 navbar-right">
+
+            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Photos by category" name="images">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search text-white"
+                                aria-hidden="true"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <!-- search form end -->
+    </div>
+</nav>
