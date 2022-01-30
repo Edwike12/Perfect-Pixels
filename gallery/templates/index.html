@@ -17,10 +17,45 @@
             </div>
 
         </div>
+        <div class="row">
 
+            {% for items in post%}
+            <div class="col-md-4">
+                <div class="img" data-toggle="modal" data-target="#exampleModalLong{{items.id}}">
+                    <img src="{{items.image.url}}" alt="" class="responsive" >
+                </div>
+   
+                
+            </div>
+            
+            <div class="modal fade" id="exampleModalLong{{items.id}}"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">{{items.name}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{items.image.url}}" alt="" class="responsive">
+                        <p>{{items.description}}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+
+                {% endfor %}
+        </div>
+
+    <a href="{% url 'add_image' %}" class="btn btn-outline-dark bg-dark text-white rounded-pill">Add Image</a>
     </div>
 
-
-    
-
+   </div>
+   
 {%endblock%}
