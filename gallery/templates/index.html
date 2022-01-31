@@ -49,8 +49,11 @@
                         <p>{{items.created_at|date}}</p>
                     </div>
                     <div class="modal-footer">
-                        <input class="form-control" type="text" value="{{items.image.url}}" id="{{items.id}}.url">
-                        <button class="btn-btn-success">Copy link</button>
+                        <!-- <input class="form-control" type="text" value="{{items.image.url}}" id="{{items.id}}.url">
+                        <button class="btn-btn-success">Copy link</button> -->
+                            <p class="card-description">Copy link</p> <input type="link" id="myInput" class="form-control"  value="{{items.image.url}}" >
+                            <div class="mt-3"> <button onclick="Hello()">Copy Link</button> </div>
+                        
                     </div>
                   </div>
                 </div>
@@ -64,5 +67,16 @@
     </div>
 
    </div>
+   <!-- <input type="text" value="Hello world"(Can be of your choice) id="myInput"(id is the name of the text, you can change it later)>
+<button onclick="Hello()">Copy Link</button>
+ -->
+<script>
+  function Hello() {
+  var copyText = document.getElementById('myInput')
+  copyText.select();
+  document.execCommand('copy')
+  console.log('Copied Link')
+}
+</script>
    
 {%endblock%}
