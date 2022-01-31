@@ -1,1 +1,1 @@
-web: gunicorn Perfect_Pixels.wsgi
+web: gunicorn mygallery.wsgi
