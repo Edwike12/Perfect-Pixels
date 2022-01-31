@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-vh@gm^0fi@r=qin(kic&ab)x(wmz!z4^0+ape4-a1a+9x8h#z&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['perfectpixels123.herokuapp.com/']
+ALLOWED_HOSTS = ['perfectpixels123.herokuapp.com']
 
 
 # Application definition
