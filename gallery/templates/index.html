@@ -49,11 +49,7 @@
                         <p>{{items.created_at|date}}</p>
                     </div>
                     <div class="modal-footer">
-                        <!-- <input class="form-control" type="text" value="{{items.image.url}}" id="{{items.id}}.url">
-                        <button class="btn-btn-success">Copy link</button> -->
-                            <p class="card-description">Copy link</p> <input type="link" id="myInput" class="form-control"  value="{{items.image.url}}" >
-                            <div class="mt-3"> <button onclick="Hello()">Copy Link</button> </div>
-                        
+                      <button class="btn btn-brown" type="button" value="{{ items.image.url }}" onclick="copyToClipboard(this.value)">Copy URL To Clipboard</button>
                     </div>
                   </div>
                 </div>
@@ -67,16 +63,20 @@
     </div>
 
    </div>
-   <!-- <input type="text" value="Hello world"(Can be of your choice) id="myInput"(id is the name of the text, you can change it later)>
-<button onclick="Hello()">Copy Link</button>
- -->
+   
 <script>
-  function Hello() {
-  var copyText = document.getElementById('myInput')
-  copyText.select();
-  document.execCommand('copy')
-  console.log('Copied Link')
+  function copyToClipboard(value){
+    function handler(event){
+        event.clipboardData.setData('text/plain',value);
+        event.preventDefault();
+        document.removeEventListener('copy',handler, true);
+    }
+        document.addEventListener('copy', handler, true);
+        document.execCommand('copy');
+
+    alert("URL Successfully Copied!");
 }
 </script>
+
    
 {%endblock%}
